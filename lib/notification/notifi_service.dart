@@ -8,7 +8,7 @@ class NotificationService {
 
   Future<void> initNotification() async {
     AndroidInitializationSettings initializationSettingsAndroid =
-    AndroidInitializationSettings('img');
+    AndroidInitializationSettings('img4.png');
 
     var initializationSettingsIOS = DarwinInitializationSettings(
         requestAlertPermission: true,

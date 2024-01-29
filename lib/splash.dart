@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:otp/auth_screen.dart';
+import 'package:otp/screens/wrapper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     Future.delayed(const Duration(seconds: 2), (){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => const LocalAuthScreen() ));
+          builder: (_) => const Wrapper() ));
     });
   }
 

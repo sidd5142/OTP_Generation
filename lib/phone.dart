@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:otp/screens/loader.dart';
 
 class MyPhone extends StatefulWidget {
   const MyPhone({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class MyPhone extends StatefulWidget {
 }
 
 class _MyPhoneState extends State<MyPhone> {
+  bool loading = false;
   TextEditingController countryController = TextEditingController();
   var phone = "";
 
@@ -23,7 +25,7 @@ class _MyPhoneState extends State<MyPhone> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,

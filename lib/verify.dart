@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/home.dart';
 import 'package:otp/phone.dart';
+import 'package:otp/screens/loader.dart';
 import 'package:pinput/pinput.dart';
 
 class MyVerify extends StatefulWidget {
@@ -13,7 +14,10 @@ class MyVerify extends StatefulWidget {
 
 class _MyVerifyState extends State<MyVerify> {
 
+  bool loading = false;
+
   final FirebaseAuth auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -41,7 +45,7 @@ class _MyVerifyState extends State<MyVerify> {
     );
 
     var code = "";
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -49,7 +53,7 @@ class _MyVerifyState extends State<MyVerify> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.black,
           ),
@@ -71,24 +75,24 @@ class _MyVerifyState extends State<MyVerify> {
                   height: 220,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
-              Text(
+              const Text(
                 "Phone Verification",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "We need to register your phone without getting started!",
                 style: TextStyle(
                   fontSize: 16,
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Pinput(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
-// import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
+import '../screens/auth.dart';
+import '../screens/loader.dart';
 import 'notifi_service.dart';
 
 DateTime scheduleTime = DateTime.now();
@@ -16,15 +17,28 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool loading = false;
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       appBar: AppBar(
         title: Text(
           widget.title,
           style: TextStyle(color: Colors.white), // Set text color to white
         ),
-        backgroundColor: Colors.purple, // Set app bar color to purple
+        backgroundColor: Colors.purple,
+        elevation: 0.0,
+        actions: <Widget>[
+          TextButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('logout'),
+            onPressed: () async {
+              await _auth.signOut();
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -33,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(
               padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
               child: Text(
-                'Welcome to our app Conex',
+                'Welcome to our app TelCom',
                 style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
               ),
             ),

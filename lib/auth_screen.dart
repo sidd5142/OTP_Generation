@@ -6,6 +6,7 @@ import 'package:local_auth_android/local_auth_android.dart';
 import 'package:local_auth_ios/local_auth_ios.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:otp/phone.dart';
+import 'package:otp/screens/loader.dart';
 
 // import 'home_screen.dart';
 
@@ -16,6 +17,8 @@ class LocalAuthScreen extends StatefulWidget {
 }
 class _LocalAuthScreenState extends State<LocalAuthScreen> {
   final LocalAuthentication auth = LocalAuthentication();
+  bool loading = false;
+
   Future<void> authinticate() async {
     try {
       final bool didAuthenticate = await auth.authenticate(
@@ -38,7 +41,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       appBar: AppBar(
         title: const Text('SafeCom',
         style: TextStyle(color: Colors.white),

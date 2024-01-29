@@ -3,18 +3,25 @@
 
 // import 'dart:js';
 
+// import 'dart:js';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/home.dart';
 import 'package:otp/notification/home_notify.dart';
 import 'package:otp/phone.dart';
+import 'package:otp/screens/wrapper.dart';
 import 'package:otp/splash.dart';
+import 'package:timezone/data/latest.dart' as tz;
 import 'package:otp/verify.dart';
 import 'auth_screen.dart';
+import 'notification/notifi_service.dart';
 
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().initNotification();
+  tz.initializeTimeZones();
   await Firebase.initializeApp(
     options: const FirebaseOptions(
       apiKey: "AIzaSyBWuBgWPNpo5jt_HWDy9UC4iBi82ufQPIg",
@@ -27,6 +34,7 @@ void main() async{
     initialRoute: 'splash',
     debugShowCheckedModeBanner: false,
     routes: {
+      'wrapper': (context) => Wrapper(),
       'splash': (context) => SplashScreen(),
       'lock': (context) => LocalAuthScreen(),
       'phone': (context) => MyPhone(),
