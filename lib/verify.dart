@@ -61,12 +61,15 @@ class _MyVerifyState extends State<MyVerify> {
         alignment: Alignment.center,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset(
-                'assets/img1.png',
-                width: 150,
-                height: 150,
+              Padding(
+                padding: const EdgeInsets.only(top: 40.0, bottom: 20.0),
+                child: Image.asset(
+                  "assets/img3.png",
+                  width: 180,
+                  height: 180,
+                ),
               ),
               SizedBox(
                 height: 25,
@@ -118,7 +121,7 @@ class _MyVerifyState extends State<MyVerify> {
                             smsCode: code
                         );
                         await auth.signInWithCredential(credential);
-                        Navigator.pushNamedAndRemoveUntil(context, "home", (route) => false);
+                        Navigator.pushNamedAndRemoveUntil(context, "notifyhome", (route) => false);
                       }
                       catch(e){
                         print("Wrong OTP");

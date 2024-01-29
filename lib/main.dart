@@ -1,12 +1,17 @@
+
+// import 'dart:js';
+
 // import 'dart:js';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/home.dart';
+import 'package:otp/notification/home_notify.dart';
 import 'package:otp/phone.dart';
+import 'package:otp/splash.dart';
 import 'package:otp/verify.dart';
-// import 'package:phone_otp_ui/phone.dart';
-// import 'package:phone_otp_ui/verify.dart';
+import 'auth_screen.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,12 +24,15 @@ void main() async{
     ),
   );
   runApp(MaterialApp(
-    initialRoute: 'phone',
+    initialRoute: 'splash',
     debugShowCheckedModeBanner: false,
     routes: {
+      'splash': (context) => SplashScreen(),
+      'lock': (context) => LocalAuthScreen(),
       'phone': (context) => MyPhone(),
       'verify': (context) => MyVerify(),
-      'home': (context) => MyHome()
+      'home': (context) => MyHome(),
+      'notifyhome': (context) => const MyHomePage(title: "Set your Notification time")
     },
   ));
 }

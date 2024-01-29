@@ -29,12 +29,15 @@ class _MyPhoneState extends State<MyPhone> {
         alignment: Alignment.center,
         child: SingleChildScrollView(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Image.asset(
-                'assets/img1.png',
-                width: 150,
-                height: 150,
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
+                child: Image.asset(
+                  "assets/img2.png",
+                  width: 200,
+                  height: 200,
+                ),
               ),
               SizedBox(
                 height: 25,
