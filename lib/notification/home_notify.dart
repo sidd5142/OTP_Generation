@@ -30,12 +30,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const Padding(
+              padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
+              child: Text(
+                'Welcome to our app Conex',
+                style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 30.0, bottom: 20.0),
               child: Image.asset(
                 "assets/img4.png",
-                width: 200,
-                height: 200,
+                width: 250,
+                height: 250,
               ),
             ),
             DatePickerTxt(),

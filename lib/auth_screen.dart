@@ -53,21 +53,39 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
             child: Image.asset(
               'assets/img1.png',
               width: 250,
-              height: 2540,
+              height: 250,
             ),
           ),
           const Padding(
             padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
             child: Text(
               'Welcome to our app',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
             ),
           ),
+
+          const Padding(
+            padding: const EdgeInsets.fromLTRB( 15, 20, 20, 15),
+            child: Center(// Add padding to the text
+            child: Text(
+              'Authenticate before accessing the app',
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 19),
+            ),
+          ),
+          ),
+
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20.0),
             child: Center(
               child: ElevatedButton(
-                child: const Text('Go to App'),
+                style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                 ),
+                child: const Text('Go to App',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
                 onPressed: () => authinticate(),
               ),
             ),

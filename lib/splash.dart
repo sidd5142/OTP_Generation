@@ -42,16 +42,16 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             end: Alignment.bottomLeft,
           )
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.edit,
-              size: 80,
-              color: Colors.white,
+            Image.asset(
+              'assets/icon1.png',
+              width: 200,
+              height: 200,
             ),
             SizedBox(height: 20),
-            Text("ConiCom",
+            Text("Conexa",
               style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 32,

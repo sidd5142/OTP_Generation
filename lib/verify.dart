@@ -64,11 +64,11 @@ class _MyVerifyState extends State<MyVerify> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40.0, bottom: 20.0),
+                padding: const EdgeInsets.only(top: 40.0, bottom: 5.0),
                 child: Image.asset(
                   "assets/img3.png",
-                  width: 180,
-                  height: 180,
+                  width: 220,
+                  height: 220,
                 ),
               ),
               SizedBox(
