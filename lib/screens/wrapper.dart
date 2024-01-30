@@ -20,7 +20,7 @@ class Wrapper extends StatelessWidget {
     {
       return LocalAuthScreen();
     } else{
-      return MyHomePage(title: "TelCom");
+      return MyHomePage(title: "Dashboard");
     }
   }
 }

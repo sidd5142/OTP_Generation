@@ -1,10 +1,6 @@
 
 // import 'dart:js';
 
-// import 'dart:js';
-
-// import 'dart:js';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/home.dart';
@@ -39,8 +35,8 @@ void main() async{
       'lock': (context) => LocalAuthScreen(),
       'phone': (context) => MyPhone(),
       'verify': (context) => MyVerify(),
-      'home': (context) => MyHome(),
-      'notifyhome': (context) => const MyHomePage(title: "Set your Notification time")
+      // 'home': (context) => MyHome(),
+      'notifyhome': (context) => const MyHomePage(title: "Dashboard")
     },
   ));
 }
