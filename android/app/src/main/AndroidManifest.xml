@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.USE_EXACT_ALARM"
         tools:ignore="ExactAlarm" />
     <application
-        android:label="otp"
-        android:name="${applicationName}"
+        android:label="Conexa"
+        android:name="Conexa"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"

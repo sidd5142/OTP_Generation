@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:otp/home.dart';
 import 'package:otp/phone.dart';
 import 'package:otp/screens/loader.dart';
 import 'package:pinput/pinput.dart';
@@ -125,7 +124,7 @@ class _MyVerifyState extends State<MyVerify> {
                             smsCode: code
                         );
                         await auth.signInWithCredential(credential);
-                        Navigator.pushNamedAndRemoveUntil(context, "notifyhome", (route) => false);
+                        Navigator.pushNamedAndRemoveUntil(context, "home", (route) => false);
                       }
                       catch(e){
                         print("Wrong OTP");

@@ -43,7 +43,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       appBar: AppBar(
-        title: const Text('SafeCom',
+        title: const Text('Conexa',
         style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.purple,
@@ -62,7 +62,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
           const Padding(
             padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
             child: Text(
-              'Welcome to our app',
+              'Welcome to Conexa',
               style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
             ),
           ),
