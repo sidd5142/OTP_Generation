@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.USE_EXACT_ALARM"
         tools:ignore="ExactAlarm" />
     <application
-        android:label="Conexa"
-        android:name="Conexa"
+        android:label="ZIO"
+        android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
