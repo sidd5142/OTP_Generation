@@ -43,10 +43,10 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       appBar: AppBar(
-        title: const Text('Conexa',
-        style: TextStyle(color: Colors.white),
+        title: const Text('ZIO',
+        style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold, fontSize: 26),
         ),
-        backgroundColor: Colors.purple,
+        // backgroundColor: Colors.purple,
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
@@ -54,7 +54,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 80.0),
             child: Image.asset(
-              'assets/img1.png',
+              'assets/img5.png',
               width: 250,
               height: 250,
             ),
@@ -62,13 +62,13 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
           const Padding(
             padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
             child: Text(
-              'Welcome to Conexa',
+              'Welcome to Zio',
               style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
             ),
           ),
 
           const Padding(
-            padding: const EdgeInsets.fromLTRB( 15, 20, 20, 15),
+            padding: const EdgeInsets.fromLTRB( 15, 20, 30, 15),
             child: Center(// Add padding to the text
             child: Text(
               'Authenticate before accessing the app',
@@ -82,13 +82,9 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                primary: Colors.blue,
-                 ),
-                child: const Text('Go to App',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+                  primary: Colors.blue,
                 ),
+                child: Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 30), // Use arrow icon
                 onPressed: () => authinticate(),
               ),
             ),

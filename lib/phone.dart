@@ -26,6 +26,16 @@ class _MyPhoneState extends State<MyPhone> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
+      appBar: AppBar( // Add the appBar here
+        title: const Text('ZIO',
+          style: TextStyle(
+            color: Colors.redAccent,
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+          ),
+        ),
+        // backgroundColor: Colors.purple, // Uncomment if you want a background color
+      ),
       body: Container(
         margin: EdgeInsets.only(left: 25, right: 25),
         alignment: Alignment.center,
@@ -41,7 +51,7 @@ class _MyPhoneState extends State<MyPhone> {
                   height: 200,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Text(
