@@ -1,5 +1,7 @@
+// home_page.dart
 import 'package:flutter/material.dart';
-import '../../messaging_service/messaging_service.dart';
+import 'package:provider/provider.dart';
+import '../../provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,6 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    // Retrieve the phone number from the provider
+    String phoneNumber =
+        Provider.of<PhoneNumberProvider>(context).phoneNumber;
+
     return DefaultTabController(
       length: 4,
       child: Scaffold(
@@ -44,13 +50,29 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  const Expanded(
+                  Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 14.0, right: 25.0),
-                      child: Text(
-                        'Hello XYZ!!',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22, color: Colors.white),
+                      padding: EdgeInsets.only(left: 14.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'Hello XYZ!!',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
+                              color: Colors.white,
+                            ),
+                          ),
+                          // Remove const from here
+                          Text(
+                            'Your Phone Number: $phoneNumber',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -62,40 +84,45 @@ class _HomePageState extends State<HomePage> {
               tabs: [
                 Tab(text: 'Guidelines'),
                 Tab(text: 'Status'),
-                // Tab(text: 'Calls'),
-                // Tab(text: 'Settings'),
               ],
             ),
             const Expanded(
-              child: Padding(padding: EdgeInsets.all(16.0),
-              child: TabBarView(
-                children: [
-                  Center(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 15),
-                        Text(
-                          'This is the important guidelines you have to follow:',
-                          style: TextStyle(fontSize: 19),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          '1. Through this app we are going to protect from Cyber Crime.',
-                          style: TextStyle(fontSize: 17),
-                        ),
-                        SizedBox(height: 15),
-                        Text(
-                          '2. You have to log in after every 72 hours otherwise your account will be blocked automatically.',
-                          style: TextStyle(fontSize: 17),
-                        ),
-                      ],
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: TabBarView(
+                  children: [
+                    Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 15),
+                          Text(
+                            'This is the important guidelines you have to follow:',
+                            style: TextStyle(fontSize: 19),
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            '1. Through this app we are going to protect from Cyber Crime.',
+                            style: TextStyle(fontSize: 17),
+                          ),
+                          SizedBox(height: 15),
+                          Text(
+                            '2. You have to log in after every 72 hours otherwise your account will be blocked automatically.',
+                            style: TextStyle(fontSize: 17),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  Center(child: Text('Status Page')),
-                  // Add other TabBarView pages as needed
-                ],
-              ),
+                    Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Status Page'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

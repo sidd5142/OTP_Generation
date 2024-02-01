@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:otp/provider.dart';
 import 'package:otp/screens/loader.dart';
+import 'package:provider/provider.dart';
 
 class MyPhone extends StatefulWidget {
   const MyPhone({Key? key}) : super(key: key);
@@ -27,9 +29,9 @@ class _MyPhoneState extends State<MyPhone> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       appBar: AppBar( // Add the appBar here
-        title: const Text('ZIO',
+        title: const Text('ZIOSAFE',
           style: TextStyle(
-            color: Colors.redAccent,
+            // color: Colors.redAccent,
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
@@ -132,6 +134,8 @@ class _MyPhoneState extends State<MyPhone> {
                           verificationFailed: (FirebaseAuthException ex){},
                           codeSent: (String verificaionId, int? resendtoken){
                           MyPhone.verify = verificaionId;
+                          Provider.of<PhoneNumberProvider>(context, listen: false)
+                              .setPhoneNumber('${countryController.text + phone}');
                             Navigator.pushNamed(context, 'verify');
                           },
                           codeAutoRetrievalTimeout: (String verificationId){}

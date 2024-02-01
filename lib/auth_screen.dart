@@ -43,10 +43,10 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       appBar: AppBar(
-        title: const Text('ZIO',
-        style: TextStyle(color: Colors.redAccent, fontWeight: FontWeight.bold, fontSize: 26),
+        title: const Text('ZIOSAFE',
+        style: TextStyle( fontWeight: FontWeight.bold, fontSize: 26),
         ),
-        // backgroundColor: Colors.purple,
+        backgroundColor: Colors.transparent,
       ),
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
@@ -54,7 +54,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 80.0),
             child: Image.asset(
-              'assets/img5.png',
+              'assets/iconss.png',
               width: 250,
               height: 250,
             ),
