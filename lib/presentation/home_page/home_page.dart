@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         Provider.of<PhoneNumberProvider>(context).phoneNumber;
 
     return DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: const Text("DASHBOARD"),
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 12.0),
+                      padding: EdgeInsets.only(left: 10.0, right: 10.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 22,
+                              fontSize: 20,
                               color: Colors.white,
                             ),
                           ),
@@ -84,52 +84,72 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20), // Add spacing before TabBar
             const TabBar(
               tabs: [
-                Tab(text: 'Guidelines'),
                 Tab(text: 'Status'),
+                Tab(text: 'Guidelines'),
                 Tab(text: 'Support'),
               ],
             ),
-            const Expanded(
+            Expanded(
               child: Padding(
                 padding: EdgeInsets.all(16.0),
                 child: TabBarView(
                   children: [
+
                     Center(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(height: 15),
+                          SizedBox(height: 40),
+                          const Text('Thank you for your Verification',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
+                          ),
+                          SizedBox(height: 15.0),
+                          const Text('You are safe now !!',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontStyle: FontStyle.italic, fontSize: 20),
+                          ),
+                          SizedBox(height: 25),
+                          Image.network(
+                            'https://cdni.iconscout.com/illustration/premium/thumb/cyber-security-4916170-4092830.png',
+                            height: 150,
+                            width: 150,
+                         ),
+                        ],
+                      ),
+                    ),
+                    Center(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 5),
+                          Image.network(
+                            'https://www.pngall.com/wp-content/uploads/4/Cyber-Security-PNG-Clipart.png',
+                            height: 150,
+                            width: 150,
+                          ),
+                          SizedBox(height: 30),
                           Text(
                             'This is the important guidelines you have to follow:',
                             style: TextStyle(fontSize: 19),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 25),
                           Text(
                             '1. Through this app we are going to protect you from Cyber Crime.',
                             style: TextStyle(fontSize: 17),
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 25),
                           Text(
                             '2. You have to log in after every 72 hours otherwise your account will be blocked automatically.',
                             style: TextStyle(fontSize: 17),
                           ),
+                          SizedBox(height: 35),
                         ],
                       ),
                     ),
-                    Center(
+                    const Center(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         // Image.network(
-                         //      'https://png.pngtree.com/png-clipart/20201127/ourmid/pngtree-cyber-security-shield-image_2456073.jpg'
-                         //  ),
-                          Text('Status Page'),
-                        ],
-                      ),
-                    ),
-                    Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           SizedBox(height: 25),
                           Text(
@@ -139,28 +159,33 @@ class _HomePageState extends State<HomePage> {
                           ),
                           SizedBox(height: 40),
                           Text(
-                            'Name = Vijay Yadav',
-                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 15),
-                          Text(
-                            'email = vijay@gmail.com',
-                            style: TextStyle(fontSize: 18),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(height: 25),
-                          Text(
                             'Name = Siddharth Yadav',
                             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                             textAlign: TextAlign.center,
                           ),
-                          SizedBox(height: 15),
+                          SizedBox(height: 10),
                           Text(
                             'email = siddharthyadav5142@gmail.com',
                             style: TextStyle(fontSize: 18),
                             textAlign: TextAlign.center,
                           ),
+                          SizedBox(height: 25),
+                          Text(
+                            'Name = Vijay Yadav',
+                            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'email = vijay@gmail.com',
+                            style: TextStyle(fontSize: 18),
+                            textAlign: TextAlign.center,
+                          ),
+                          // Image.network(
+                          //   'https://icon2.cleanpng.com/20180408/pze/kisspng-customer-service-technical-support-help-desk-custo-call-centre-5acad387737811.317262641523241863473.jpg',
+                          //   width: 150,
+                          //   height: 150,
+                          // ),
                         ],
                       ),
                     ),
