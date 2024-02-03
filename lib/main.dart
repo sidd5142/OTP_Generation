@@ -40,10 +40,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        // accentColor: Colors.purple,
-        brightness: Brightness.light, // Light theme
+        brightness: Brightness.dark, // Light theme
+        backgroundColor: Colors.grey[900], // Set dark background color
       ),
-      darkTheme: ThemeData.dark(), // Dark theme
+      darkTheme: ThemeData.dark().copyWith(
+        backgroundColor: Colors.grey[900], // Set dark background color
+      ), // Dark theme
       routes: {
         'wrapper': (context) => Wrapper(),
         'splash': (context) => SplashScreen(),

@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/phone.dart';
+import 'package:otp/provider.dart';
 import 'package:otp/screens/loader.dart';
 import 'package:pinput/pinput.dart';
+import 'package:provider/provider.dart';
 
 class MyVerify extends StatefulWidget {
   const MyVerify({Key? key}) : super(key: key);
@@ -19,6 +21,8 @@ class _MyVerifyState extends State<MyVerify> {
 
   @override
   Widget build(BuildContext context) {
+    String phoneNumber =
+        Provider.of<PhoneNumberProvider>(context).phoneNumber;
     final defaultPinTheme = PinTheme(
       width: 56,
       height: 56,
@@ -67,7 +71,7 @@ class _MyVerifyState extends State<MyVerify> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 40.0, bottom: 5.0),
+                padding: const EdgeInsets.only(top: 25.0, bottom: 5.0),
                 child: Image.asset(
                   "assets/img3.png",
                   width: 220,
@@ -91,6 +95,15 @@ class _MyVerifyState extends State<MyVerify> {
                 ),
                 textAlign: TextAlign.center,
               ),
+              const SizedBox(height : 30),
+               Text(
+                "OTP send to $phoneNumber",
+                style: TextStyle(
+                  fontSize: 17,
+                ),
+                textAlign: TextAlign.center,
+              ),
+
               const SizedBox(
                 height: 30,
               ),
@@ -114,7 +127,7 @@ class _MyVerifyState extends State<MyVerify> {
                 height: 45,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.green.shade600,
+                        primary: Colors.lightGreenAccent,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () async{
@@ -144,7 +157,7 @@ class _MyVerifyState extends State<MyVerify> {
                       },
                       child: Text(
                         "Edit Phone Number ?",
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.white),
                       ))
                 ],
               )

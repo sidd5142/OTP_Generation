@@ -1,33 +1,32 @@
+// import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:otp/auth_screen.dart';
 import 'package:otp/screens/wrapper.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin
-{
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(const Duration(seconds: 3), (){
+    Future.delayed(const Duration(seconds: 5), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-          builder: (_) => const Wrapper() ));
+          builder: (_) => const Wrapper()));
     });
   }
 
   @override
   void dispose() {
-    super.dispose();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-    overlays : SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
     super.dispose();
   }
 
@@ -38,25 +37,28 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.blue, Colors.purple],
+            colors: [Colors.black, Colors.black],
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
-          )
+          ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Use Image.asset for the GIF
             Image.asset(
-              'assets/iconss.png',  
-              width: 200,
-              height: 200,
+              'assets/vdo.gif', // Replace with the path to your GIF
+              width: 300,
+              height: 300,
+              // You can customize other properties like fit, alignment, etc.
             ),
-            SizedBox(height: 20),
-            Text("Conexa",
+            const SizedBox(height: 5),
+            const Text(
+              "ZioSafe",
               style: TextStyle(
                 fontStyle: FontStyle.italic,
                 fontSize: 32,
-                color: Colors.white,
+                color: Colors.lightGreenAccent,
               ),
             ),
           ],
@@ -65,3 +67,4 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     );
   }
 }
+

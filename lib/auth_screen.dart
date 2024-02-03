@@ -44,7 +44,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
     return loading ? Loading() : Scaffold(
       appBar: AppBar(
         title: const Text('ZIOSAFE',
-        style: TextStyle( fontWeight: FontWeight.bold, fontSize: 26),
+        style: TextStyle( fontWeight: FontWeight.bold, fontSize: 26, color: Colors.lightGreenAccent),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -54,25 +54,29 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 80.0),
             child: Image.asset(
-              'assets/iconss.png',
+              'assets/home2.png',
               width: 250,
               height: 250,
             ),
           ),
           const Padding(
-            padding: const EdgeInsets.only(top: 30.0), // Add padding to the text
+            padding: const EdgeInsets.fromLTRB(45, 40, 20, 10), // Add padding to the text
             child: Text(
-              'Welcome to Zio',
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
+                  'Protect your phone at all times',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, fontStyle: FontStyle.italic),
             ),
           ),
 
           const Padding(
-            padding: const EdgeInsets.fromLTRB( 15, 20, 30, 15),
+            padding: const EdgeInsets.fromLTRB( 45, 10, 30, 15),
             child: Center(// Add padding to the text
             child: Text(
-              'Authenticate before accessing the app',
-              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 19),
+              'Keep your phone safe from hackers. '
+                  'Authenticate before accessing the app',
+              textAlign: TextAlign.center,
+
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 16),
             ),
           ),
           ),
@@ -82,7 +86,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  primary: Colors.lightGreenAccent,
                 ),
                 child: Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 30), // Use arrow icon
                 onPressed: () => authinticate(),

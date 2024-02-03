@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
-import 'package:otp/screens/data.dart';
+// import 'package:otp/screens/data.dart';
 import '../screens/auth.dart';
+
 import '../screens/loader.dart';
 import 'notifi_service.dart';
 
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(fontStyle: FontStyle.italic, fontSize: 22),
               ),
             ),
-            BrewList(),
+            // BrewList(),
             Padding(
               padding: const EdgeInsets.only(top: 30.0, bottom: 20.0),
               child: Image.asset(

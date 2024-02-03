@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:otp/provider.dart';
 import 'package:otp/screens/loader.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 class MyPhone extends StatefulWidget {
@@ -31,7 +32,7 @@ class _MyPhoneState extends State<MyPhone> {
       appBar: AppBar( // Add the appBar here
         title: const Text('ZIOSAFE',
           style: TextStyle(
-            // color: Colors.redAccent,
+            color: Colors.lightGreenAccent,
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
@@ -124,7 +125,7 @@ class _MyPhoneState extends State<MyPhone> {
                 height: 45,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.green.shade600,
+                        primary: Colors.lightGreenAccent,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () async{
