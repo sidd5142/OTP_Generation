@@ -44,7 +44,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
     return loading ? Loading() : Scaffold(
       appBar: AppBar(
         title: const Text('ZIOSAFE',
-        style: TextStyle( fontWeight: FontWeight.bold, fontSize: 26, color: Colors.lightGreenAccent),
+        style: TextStyle( fontWeight: FontWeight.bold, fontSize: 26, color: Colors.blue),
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -86,7 +86,7 @@ class _LocalAuthScreenState extends State<LocalAuthScreen> {
             child: Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.lightGreenAccent,
+                  primary: Colors.lightBlue,
                 ),
                 child: Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 30), // Use arrow icon
                 onPressed: () => authinticate(),

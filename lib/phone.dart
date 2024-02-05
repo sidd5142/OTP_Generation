@@ -32,7 +32,7 @@ class _MyPhoneState extends State<MyPhone> {
       appBar: AppBar( // Add the appBar here
         title: const Text('ZIOSAFE',
           style: TextStyle(
-            color: Colors.lightGreenAccent,
+            color: Colors.blue,
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
@@ -125,7 +125,7 @@ class _MyPhoneState extends State<MyPhone> {
                 height: 45,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.lightGreenAccent,
+                        primary: Colors.lightBlue,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                     onPressed: () async{
